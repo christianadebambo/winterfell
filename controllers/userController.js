@@ -40,7 +40,7 @@ const userController = {
 
   // Handles the updating of user profile information
   updateProfile: (req, res) => {
-    const { country, phone, preferredCategory } = req.body;
+    const { country, phone, prefEventCategory } = req.body;
 
     const errors = [];
 
@@ -62,7 +62,7 @@ const userController = {
     const updateData = {
       country: country,
       phone: phone,
-      preferredCategory: preferredCategory,
+      prefEventCategory: prefEventCategory,
     };
 
     req.userModel.updateUser(
