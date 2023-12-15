@@ -9,3 +9,4 @@
 {"name":"admin","email":"admin@example.com","password":"$2b$10$Ddz8lqHVMikPY8mPJ8WENO8On3.ORKRxN3EASKxZo2.N18K4MVkje","role":"admin","_id":"gvAEJAuaodRkdenM"}
 {"name":"Jane Done","email":"jane@doe.com","password":"$2b$10$n9C6.Dbh0c/Av8oqRxTqPeb3if7TtdgadXO5R83DR7NDRbFuGJini","gradYear":"2020","prefEventCategory":"networking","_id":"prdTbKYyqbgVZXdn"}
 {"name":"Christian","email":"christian@gmail.com","password":"$2b$10$Uog6jhz/J0aXgsRREs1.2.vKlYEuc7beA3od.pD/D9qSf1URGsFYa","gradYear":"2022","prefEventCategory":"networking","_id":"r8yyVJe2yz842yde"}
+{"name":"Test Drive","email":"test@drive.com","password":"$2b$10$Wi9TPgRlpPbEgVjBVowDTuCF948hk6HCtC3BrZjZphdeJYqLP7Zwa","gradYear":"2017","prefEventCategory":"social","_id":"fIJhienmzXpUPDiB"}

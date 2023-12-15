@@ -95,10 +95,15 @@ app.use(userRoutes);
 // Admin-only routes protected by isAdmin middleware
 app.use('/admin', isAdmin, adminRoutes); // Apply isAdmin middleware to all admin routes
 
-// Start the application server on the specified PORT
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+const preferredPort = 3000;
+
+const server = app.listen(preferredPort, () => {
+  const actualPort = server.address().port;
+  if (actualPort === preferredPort) {
+    console.log(`Server is running on port ${actualPort}`);
+  } else {
+    console.log(`Port ${preferredPort} is not available. Server is running on port ${actualPort} instead.`);
+  }
 });
 
 module.exports = app;
