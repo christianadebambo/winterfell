@@ -1,0 +1,45 @@
+{{> header }}
+{{> navbar_admin }}
+
+<div class="container dashboard text-center mt-5">
+  <h1 class="my-5 display-4 fw-bold">Welcome, {{user.name}}</h1>
+
+  <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+
+    <!-- Manage Users Card -->
+    <div class="col mb-4">
+      <div class="card h-100 border-0 shadow">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <h5 class="card-title fs-3">Manage Users</h5>
+          <p class="card-text">View and manage alumni users in the system.</p>
+          <a href="/admin/manage-users" class="btn btn-lg btn-primary mt-3">Manage Users</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Manage Events Card -->
+    <div class="col mb-4">
+      <div class="card h-100 border-0 shadow">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <h5 class="card-title fs-3">Manage Events</h5>
+          <p class="card-text">View and manage alumni events in the system.</p>
+          <a href="/admin/manage-events" class="btn btn-lg btn-primary mt-3">Manage Events</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alumni Events Card -->
+    <div class="col mb-4">
+      <div class="card h-100 border-0 shadow">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <h5 class="card-title fs-3">Alumni Events</h5>
+          <p class="card-text">View events organized by specific alumni and events they want to participate in.</p>
+          <a href="/admin/alumni-events" class="btn btn-lg btn-primary mt-3">Alumni Events</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{{> footer_admin }}

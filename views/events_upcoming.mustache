@@ -1,0 +1,40 @@
+{{> header }}
+{{> navbar }}
+
+<div class="container my-5">
+  <h2 class="mb-4 text-center">Upcoming Events</h2>
+  
+  <!-- Display errors if there are any -->
+  {{#errors.length}}
+    <div class="alert alert-danger" role="alert">
+      {{.}}
+    </div>
+  {{/errors.length}}
+
+  {{#events.length}}
+    <div class="list-group">
+      <!-- Loop over each event and display it -->
+      {{#events}}
+        <div class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{title}}</h5>
+            <small class="text-muted">{{formattedDate}}</small>
+          </div>
+          <p class="mb-1">{{description}}</p>
+          <div class="d-flex w-100 justify-content-between">
+            <small class="mt-1">{{formattedTime}} | {{timeZone}}</small>
+            <small class="mt-1">{{venue}}</small>
+          </div>
+          <small class="badge bg-secondary">{{category}}</small>
+        </div>
+      {{/events}}
+    </div>
+  {{/events.length}}
+  {{^events.length}}
+    <div class="alert alert-info" role="alert">
+      No upcoming events. Check back later!
+    </div>
+  {{/events.length}}
+</div>
+
+{{> footer }}

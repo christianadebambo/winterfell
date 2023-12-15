@@ -1,0 +1,75 @@
+{{> header }}
+{{> navbar_logged_in }}
+<div class="container my-5">
+    <h2 class="mb-4">My Events</h2>
+    
+    <!-- Alerts for errors and success messages -->
+    {{#errors.length}}
+    <div class="alert alert-danger" role="alert">
+        {{#errors}}{{.}}{{/errors}}
+    </div>
+    {{/errors.length}}
+    {{#success.length}}
+    <div class="alert alert-success" role="alert">
+        {{#success}}{{.}}{{/success}}
+    </div>
+    {{/success.length}}
+
+    <!-- Participating Events Section -->
+    <h3 class="mb-3">Participating</h3>
+    {{#participatingEvents.length}}
+    <div class="list-group mb-4">
+        {{#participatingEvents}}
+        <div class="list-group-item flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{title}}</h5>
+                <small class="text-muted">{{formattedDate}}</small>
+            </div>
+            <p class="mb-1">{{description}}</p>
+            <small class="text-muted">Time: {{formattedTime}} {{timeZone}}</small><br>
+            <small class="text-muted">Venue: {{venue}}</small>
+            <div class="mt-2">
+                <form action="/remove-participation" method="post" class="d-inline-block" onsubmit="return confirm('Are you sure you want to remove this event from your list?');">
+                    <input type="hidden" name="eventId" value="{{_id}}">
+                    <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                </form>
+            </div>
+        </div>
+        {{/participatingEvents}}
+    </div>
+    {{/participatingEvents.length}}
+    {{^participatingEvents.length}}
+    <p>You are not participating in any events.</p>
+    {{/participatingEvents.length}}
+
+    <!-- Organizing Events Section -->
+    <h3 class="mb-3">Organizing</h3>
+    {{#organizingEvents.length}}
+    <div class="list-group">
+        {{#organizingEvents}}
+        <div class="list-group-item flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{title}}</h5>
+                <small class="text-muted">{{formattedDate}}</small>
+            </div>
+            <p class="mb-1">{{description}}</p>
+            <small class="text-muted">Time: {{formattedTime}} {{timeZone}}</small><br>
+            <small class="text-muted">Venue: {{venue}}</small>
+            <div class="mt-2 d-flex justify-content-end">
+                <form action="/cancel-event" method="post" class="d-inline-block mr-2" onsubmit="return confirm('Are you sure you want to cancel this event?');">
+                    <input type="hidden" name="eventId" value="{{_id}}">
+                    <button type="submit" class="btn btn-danger btn-sm me-2">Cancel Event</button>
+                </form>
+                <a href="/edit-event/{{_id}}" class="btn btn-primary btn-sm" onclick="return confirm('Are you sure you want to edit this event?');">Edit</a>
+            </div>
+        </div>
+        {{/organizingEvents}}
+    </div>
+    {{/organizingEvents.length}}
+    {{^organizingEvents.length}}
+    <p>You are not organizing any events.</p>
+    {{/organizingEvents.length}}
+    <br>
+    <br>
+</div>
+{{> footer_logged_in }}

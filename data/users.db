@@ -1,0 +1,11 @@
+{"name":"Megane Farrelle","email":"megane.farelle@gmail.com","password":"$2b$10$68cnO9SiKTgWGnaSdlSQAOnALihSvSQ8WI5itY9XebmJThFB6z3OO","_id":"19nc1HH87YeJsnOJ","country":"Mauritius","phone":"54671235","gradYear":"2019","prefEventCategory":"professional"}
+{"name":"test","email":"test@test.com","password":"$2b$10$4xZpyqgZSeQITViKluFbDOXUiKjiF4/T4zlwaj2YHPkCLK.vw24zi","_id":"8VQJsFkaovdGFfGg","gradYear":"2017","prefEventCategory":"networking"}
+{"name":"dev","email":"rer@rer.com","password":"$2b$10$0ABKZox1GOZ3Dmc2.ffb5uoVdq7UZgnaQDFnbwjoO7/yB.UDTJGHa","_id":"DdsE59D4edLoIAhv","gradYear":"2014","prefEventCategory":"professional"}
+{"name":"John Doe","email":"john@doe.com","password":"$2b$10$uJq7clSGHfH64p423QLms.hFWnEVIQNHj1QzCrV5HgBjdf88cWP8C","gradYear":"2010","prefEventCategory":"professional","_id":"S3tHMJCwSbuGVMYn"}
+{"name":"dev0","email":"dev0@dev.com","password":"$2b$10$hIrfhlnSMZcW5E8eJIFxreFuF8uq0VUW.sp2CqAfda5oCba//8N9q","_id":"TzncOhn2YVVEFXBB","participatingInEvents":["g9X1nMsT6brh4RHh"],"country":"United Kingdom","phone":"080 5678 9012","preferredCategory":"professional","gradYear":"2014","prefEventCategory":"social"}
+{"name":"Lorem Ipsum","email":"lorem@ipsum.com","password":"$2b$10$InZljJ2wbv6rdAwbvirFWOVi/AOU9wzQW7Yxpsk3oQlDBKX4gon5a","gradYear":"2014","prefEventCategory":"networking","_id":"WLjSr47ZlO3vOOnD"}
+{"name":"Oliver Twist","email":"oliver@twist.com","password":"$2b$10$EVAOmdU4ka6.jQ/b6Y0K2u3aOh.ueI9MDw64/e9piME2iXq4ulJhy","gradYear":"2016","prefEventCategory":"social","_id":"cJYb18eGhVD8x59b"}
+{"name":"dev","email":"dev@dev.com","password":"$2b$10$dQbMYmBoV5qZkVQfBhulS.2dD4P1eIGb7G8mQOchTHgI7B7RaR5MO","_id":"fHO99zvs5277R37s","gradYear":"2014","prefEventCategory":"campus"}
+{"name":"admin","email":"admin@example.com","password":"$2b$10$Ddz8lqHVMikPY8mPJ8WENO8On3.ORKRxN3EASKxZo2.N18K4MVkje","role":"admin","_id":"gvAEJAuaodRkdenM"}
+{"name":"Jane Done","email":"jane@doe.com","password":"$2b$10$n9C6.Dbh0c/Av8oqRxTqPeb3if7TtdgadXO5R83DR7NDRbFuGJini","gradYear":"2020","prefEventCategory":"networking","_id":"prdTbKYyqbgVZXdn"}
+{"name":"Christian","email":"christian@gmail.com","password":"$2b$10$Uog6jhz/J0aXgsRREs1.2.vKlYEuc7beA3od.pD/D9qSf1URGsFYa","gradYear":"2022","prefEventCategory":"networking","_id":"r8yyVJe2yz842yde"}

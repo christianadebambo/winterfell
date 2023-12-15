@@ -1,0 +1,36 @@
+<body class="d-flex flex-column h-100">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" role="navigation">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/" aria-label="Winterfell University Alumni Homepage">Winterfell University Alumni</a>
+      <button class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end"
+           id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-white {{#isActiveHome}}active{{/isActiveHome}}" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white {{#isActiveAbout}}active{{/isActiveAbout}}" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white {{#isActiveUpcoming}}active{{/isActiveUpcoming}}" href="/upcoming">Upcoming Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white {{#isActiveLogin}}active{{/isActiveLogin}}" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white {{#isActiveRegister}}active{{/isActiveRegister}}" href="/register">Register</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,46 @@
+<body class="d-flex flex-column h-100">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary"
+       role="navigation">
+    <div class="container-fluid">
+      <a class="navbar-brand"
+         href="/admin/dashboard"
+         aria-label="Winterfell University Alumni Manager Dashboard">Winterfell University Alumni</a>
+      <button class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAdmin"
+              aria-controls="navbarNavAdmin"
+              aria-expanded="false"
+              aria-label="Toggle navigation menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end"
+           id="navbarNavAdmin">
+        <ul class="navbar-nav">
+          <li class="nav-item {{#isActiveManagerDashboard}}active{{/isActiveManagerDashboard}}">
+            <a class="nav-link text-white" href="/admin/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item {{#isActiveManageEvents}}active{{/isActiveManageEvents}}">
+            <a class="nav-link text-white" href="/admin/manage-events">Manage Events</a>
+          </li>
+          <li class="nav-item {{#isActiveManageUsers}}active{{/isActiveManageUsers}}">
+            <a class="nav-link text-white" href="/admin/manage-users">Manage Users</a>
+          </li>
+          <li class="nav-item {{#isActiveAlumniEvents}}active{{/isActiveAlumniEvents}}">
+            <a class="nav-link text-white" href="/admin/alumni-events">Alumni Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white"
+               href="/logout"
+               onclick="return confirmLogout()">Log out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <script>
+  function confirmLogout() {
+    return confirm("Are you sure you want to log out?");
+  }
+  </script>

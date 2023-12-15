@@ -1,0 +1,57 @@
+{{> header}}
+{{> navbar_logged_in}}
+
+<div class="container mt-5">
+  <h2>My Profile</h2>
+  {{#successMessage}}
+  <div class="alert alert-success" role="alert">
+    {{successMessage}}
+  </div>
+  {{/successMessage}}
+  {{#errorMessage}}
+  <div class="alert alert-danger" role="alert">
+    {{errorMessage}}
+  </div>
+  {{/errorMessage}}
+
+  <form action="/profile" method="POST">
+    <div class="row mb-4"> 
+      <!-- Email field -->
+      <div class="col-md-6">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" value="{{user.email}}" disabled>
+      </div>
+    </div>
+
+    <div class="row mb-4"> 
+      <!-- Preferred Event Category -->
+      <div class="col-md-6">
+        <label for="prefEventCategory">Preferred Event Category</label>
+        <select class="form-control" id="prefEventCategory" name="prefEventCategory">
+          <option value="professional" {{#ifPrefCategoryProfessional}}selected{{/ifPrefCategoryProfessional}}>Professional Development</option>
+          <option value="networking" {{#ifPrefCategoryNetworking}}selected{{/ifPrefCategoryNetworking}}>Networking</option>
+          <option value="social" {{#ifPrefCategorySocial}}selected{{/ifPrefCategorySocial}}>Social Gatherings</option>
+          <option value="campus" {{#ifPrefCategoryCampus}}selected{{/ifPrefCategoryCampus}}>Campus Events</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Current Country of Residence -->
+      <div class="col-md-6 mb-4"> 
+        <label for="country">Current Country of Residence</label>
+        <input type="text" class="form-control" id="country" name="country" value="{{user.country}}">
+      </div>
+
+      <!-- Phone Number -->
+      <div class="col-md-6 mb-4"> 
+        <label for="phone">Phone Number</label>
+        <input type="text" class="form-control" id="phone" name="phone" value="{{user.phone}}">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Save Changes</button> 
+  </form>
+</div>
+
+{{> footer_logged_in}}

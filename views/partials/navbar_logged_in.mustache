@@ -1,0 +1,52 @@
+<body class="d-flex flex-column h-100">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary"
+       role="navigation">
+    <div class="container-fluid">
+      <a class="navbar-brand"
+         href="/dashboard"
+         aria-label="Winterfell University Alumni Dashboard">Winterfell University Alumni</a>
+      <button class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavLoggedIn"
+              aria-controls="navbarNavLoggedIn"
+              aria-expanded="false"
+              aria-label="Toggle navigation menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end"
+           id="navbarNavLoggedIn">
+        <ul class="navbar-nav">
+          <li class="nav-item {{#isActiveDashboard}}active{{/isActiveDashboard}}">
+            <a class="nav-link text-white" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item {{#isActiveMyEvents}}active{{/isActiveMyEvents}}">
+            <a class="nav-link text-white" href="/myevents">My Events</a>
+          </li>
+          <li class="nav-item {{#isActiveParticipate}}active{{/isActiveParticipate}}">
+            <a class="nav-link text-white" href="/participate">Participate</a>
+          </li>
+          <li class="nav-item {{#isActiveOrganize}}active{{/isActiveOrganize}}">
+            <a class="nav-link text-white" href="/organize">Organise</a>
+          </li>
+          <li class="nav-item {{#isActiveCategories}}active{{/isActiveCategories}}">
+            <a class="nav-link text-white" href="/categories">Categories</a>
+          </li>
+          <li class="nav-item {{#isActiveProfile}}active{{/isActiveProfile}}">
+            <a class="nav-link text-white" href="/profile">My Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white"
+               href="/logout"
+               onclick="return confirmLogout()">Log out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <script>
+  function confirmLogout() {
+    return confirm("Are you sure you want to log out?");
+  }
+  </script>

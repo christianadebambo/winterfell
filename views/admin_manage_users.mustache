@@ -1,0 +1,44 @@
+{{> header }}
+{{> navbar_admin }}
+
+<div class="container mt-5">
+  <h2 class="mb-4">Manage Users</h2>
+
+  <!-- Button to Add New User -->
+  <div class="mb-4">
+    <a href="/admin/add-user" class="btn btn-success">Add New User</a>
+  </div>
+
+  <!-- Users Table -->
+  {{#users.length}}
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#users}}
+            <tr>
+              <td>{{name}}</td>
+              <td>{{email}}</td>
+              <td>
+                <a href="/admin/edit-user/{{_id}}" class="btn btn-primary btn-sm me-2" onclick="return confirm('Are you sure you want to edit this user?');">Edit</a>
+                <a href="/admin/delete-user/{{_id}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+              </td>
+            </tr>
+          {{/users}}
+        </tbody>
+      </table>
+    </div>
+  {{/users.length}}
+  {{^users.length}}
+    <p class="text-center">No users found.</p>
+  {{/users.length}}
+  <br>
+</div>
+
+{{> footer_admin }}

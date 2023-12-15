@@ -1,0 +1,46 @@
+{{> header }}
+{{> navbar_admin }}
+<div class="container my-5">
+    <h2 class="mb-4">{{user.name}}'s Events</h2>
+
+    <!-- Organizing Events Section -->
+    <h3 class="mb-3">Organizing</h3>
+    {{#organizingEvents.length}}
+    <div class="list-group">
+        {{#organizingEvents}}
+        <div class="list-group-item flex-column align-items-start">
+            <h5 class="mb-1">{{title}}</h5>
+            <p>{{description}}</p>
+            <small>Date: {{formattedDate}}</small><br>
+            <small>Time: {{formattedTime}} {{timeZone}}</small><br>
+            <small>Venue: {{venue}}</small>
+        </div>
+        {{/organizingEvents}}
+    </div>
+    {{/organizingEvents.length}}
+    {{^organizingEvents.length}}
+    <p>No events organized.</p>
+    {{/organizingEvents.length}}
+
+    <!-- Participating Events Section -->
+    <br>
+    <h3 class="mb-3">Participating</h3>
+    {{#participatingEvents.length}}
+    <div class="list-group">
+        {{#participatingEvents}}
+        <div class="list-group-item flex-column align-items-start">
+            <h5 class="mb-1">{{title}}</h5>
+            <p>{{description}}</p>
+            <small>Date: {{formattedDate}}</small><br>
+            <small>Time: {{formattedTime}} {{timeZone}}</small><br>
+            <small>Venue: {{venue}}</small>
+        </div>
+        {{/participatingEvents}}
+    </div>
+    {{/participatingEvents.length}}
+    {{^participatingEvents.length}}
+    <p>No events participating.</p>
+    {{/participatingEvents.length}}
+    <br>
+</div>
+{{> footer_admin }}

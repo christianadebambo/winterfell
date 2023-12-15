@@ -1,0 +1,19 @@
+{{> header }}
+{{> navbar_admin }}
+<div class="container mt-5">
+  <h2 class="mb-4">Alumni Events</h2>
+  <div class="row">
+    {{#users}}
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{name}}</h5>
+          <p class="card-text">{{email}}</p>
+          <a href="/admin/user-events/{{_id}}" class="btn btn-primary">View Events</a>
+        </div>
+      </div>
+    </div>
+    {{/users}}
+  </div>
+</div>
+{{> footer_admin }}

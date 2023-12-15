@@ -1,0 +1,45 @@
+  <!-- Footer -->
+  <footer class="footer bg-primary text-white mt-auto py-3" role="contentinfo">
+    <div class="container text-center">
+      <nav aria-label="Footer navigation">
+        <ul class="nav justify-content-center pb-3 mb-3">
+          <li class="nav-item">
+            <a href="/dashboard" class="nav-link px-2 text-white" aria-label="Dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a href="/myevents" class="nav-link px-2 text-white" aria-label="My Events">My Events</a>
+          </li>
+          <li class="nav-item">
+            <a href="/participate" class="nav-link px-2 text-white" aria-label="Participate">Participate</a>
+          </li>
+          <li class="nav-item">
+            <a href="/organize" class="nav-link px-2 text-white" aria-label="Organize">Organize</a>
+          </li>
+          <li class="nav-item">
+            <a href="/categories" class="nav-link px-2 text-white" aria-label="Categories">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a href="/profile" class="nav-link px-2 text-white" aria-label="My Profile">My Profile</a>
+          </li>     
+        </ul>
+      </nav>
+      <p>© 2023 Winterfell University Alumni Association</p>
+    </div>
+  </footer>
+  <!-- jQuery, Popper JS, and Bootstrap Bundle -->
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5kFYyqK17LmAc14PJgHzu0qe2J5K1QTsqUggmCt8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha256-dP1x5fxQns5nCwqTwCHDjA8dR9G/I6G+9b2RMt1xZ0I=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha256-7A7x0pNczcb+eWHy3q1g5Jc3TUSs2+ZxJv2Qq8sXe6w=" crossorigin="anonymous"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var navbarToggler = document.querySelector('.navbar-toggler');
+      var navbarMenu = document.querySelector('#navbarNavLoggedIn');
+
+      navbarToggler.addEventListener('click', function () {
+        navbarMenu.classList.toggle('show');
+      });
+    });
+  </script>
+</body>
+</html>

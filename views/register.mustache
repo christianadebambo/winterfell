@@ -1,0 +1,48 @@
+{{> header }}
+{{> navbar }}
+<!-- Main Content -->
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <h2 class="mb-4 text-center">Register for Winterfell Alumni Network</h2>
+            <!-- Display flash messages -->
+            {{#messages.errors}}
+            <div class="alert alert-danger" role="alert" aria-live="assertive">{{.}}</div>
+            {{/messages.errors}}
+            <form action="/register" method="post" class="shadow-sm p-4 rounded bg-light">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="gradYear" class="form-label">Graduation Year</label>
+                    <input type="number" class="form-control" id="gradYear" name="gradYear" required>
+                </div>
+                <div class="mb-3">
+                    <label for="prefEventCategory" class="form-label">Preferred Event Category</label>
+                    <select class="form-select" id="prefEventCategory" name="prefEventCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="professional">Professional Development</option>
+                        <option value="networking">Networking</option>
+                        <option value="social">Social Gatherings</option>
+                        <option value="campus">Campus Events</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+{{> footer }}

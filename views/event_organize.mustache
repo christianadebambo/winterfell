@@ -1,0 +1,82 @@
+{{> header }}
+{{> navbar_logged_in }}
+<div class="container mt-5">
+  <h2>{{#event}}Edit{{/event}}{{^event}}Organize{{/event}} an Event</h2>
+  <form action="{{#event}}/update-event{{/event}}{{^event}}/organize{{/event}}"
+        method="post">
+    {{#event}}
+    <input type="hidden" name="eventId" value="{{_id}}">
+  {{/event}}
+  <div class="mb-3">
+    <label for="title" class="form-label">Event Title</label>
+    <input type="text"
+           class="form-control"
+           id="title"
+           name="title"
+           value="{{event.title}}"
+           required>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea class="form-control"
+              id="description"
+              name="description"
+              rows="3"
+              required>{{event.description}}</textarea>
+  </div>
+  <div class="mb-3">
+    <label for="date" class="form-label">Date</label>
+    <input type="date"
+           class="form-control"
+           id="date"
+           name="date"
+           value="{{event.date}}"
+           required>
+  </div>
+  <div class="mb-3">
+    <label for="time" class="form-label">Time</label>
+    <input type="time"
+           class="form-control"
+           id="time"
+           name="time"
+           value="{{event.time}}"
+           required>
+  </div>
+  <div class="mb-3">
+    <label for="timeZone" class="form-label">Time Zone</label>
+    <input type="text"
+           class="form-control"
+           id="timeZone"
+           name="timeZone"
+           value="{{event.timeZone}}"
+           placeholder="e.g., EST, PDT, GMT+1"
+           required>
+  </div>
+  <div class="mb-3">
+    <label for="venue" class="form-label">Venue</label>
+    <input type="text"
+           class="form-control"
+           id="venue"
+           name="venue"
+           value="{{event.venue}}"
+           required>
+  </div>
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    <select class="form-select" id="category" name="category" required>
+      <option value="professional" {{#event}}{{#isProfessionalCategory}}selected{{/isProfessionalCategory}}{{/event}}>Professional Development
+      </option>
+      <option value="networking" {{#event}}{{#isNetworkingCategory}}selected{{/isNetworkingCategory}}{{/event}}>Networking
+      </option>
+      <option value="social" {{#event}}{{#isSocialCategory}}selected{{/isSocialCategory}}{{/event}}>Social Gatherings
+      </option>
+      <option value="campus" {{#event}}{{#isCampusCategory}}selected{{/isCampusCategory}}{{/event}}>Campus Events
+      </option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">{{#event}}Update Event{{/event}}{{^event}}Submit Event{{/event}}</button>
+</form>
+<br>
+<br>
+</div>
+{{> footer_logged_in }}

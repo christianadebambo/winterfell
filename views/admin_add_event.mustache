@@ -1,0 +1,54 @@
+{{> header }}
+{{> navbar_admin }}
+<div class="container mt-5">
+    <h2>Add New Event</h2>
+    <form action="/admin/add-event" method="post">
+        <div class="mb-3">
+            <label for="title" class="form-label">Event Title</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control"
+                      id="description"
+                      name="description"
+                      rows="3"
+                      required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date" name="date" required>
+        </div>
+        <div class="mb-3">
+            <label for="time" class="form-label">Time</label>
+            <input type="time" class="form-control" id="time" name="time" required>
+        </div>
+        <div class="mb-3">
+            <label for="timeZone" class="form-label">Time Zone</label>
+            <input type="text"
+                   class="form-control"
+                   id="timeZone"
+                   name="timeZone"
+                   placeholder="e.g., EST, PDT, GMT+1"
+                   required>
+        </div>
+        <div class="mb-3">
+            <label for="venue" class="form-label">Venue</label>
+            <input type="text" class="form-control" id="venue" name="venue" required>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select class="form-select" id="category" name="category" required>
+                <option value="">Select a category</option>
+                <option value="professional">Professional Development</option>
+                <option value="networking">Networking</option>
+                <option value="social">Social Gatherings</option>
+                <option value="campus">Campus Events</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Event</button>
+    </form>
+    <br>
+    <br>
+</div>
+{{> footer_admin }}

@@ -1,0 +1,74 @@
+{{> header }}
+{{> navbar }}
+<!-- Main Content -->
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="mb-4 text-center">Login to Winterfell Alumni Network</h2>
+            <!-- Place for server-side error messages -->
+            {{#messages.errors}}
+            <div class="alert alert-danger" role="alert">
+                {{.}}
+            </div>
+            {{/messages.errors}}
+            <!-- Place for error messages -->
+            <div id="error-message" class="alert alert-danger d-none" role="alert"></div>
+            <!-- Form -->
+            <form id="loginForm" action="/login" method="post" class="shadow p-4 rounded bg-light">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="text" class="form-control" id="email" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+{{> footer }}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+// Wait for the DOM to be ready
+$(function() {
+    // Function to check if the fields are empty
+    function checkFields() {
+        var email = $('#email').val().trim();
+        var password = $('#password').val().trim();
+        var errorMessage = '';
+
+        if (email === '') {
+            errorMessage += 'Email address is required. ';
+        }
+        if (password === '') {
+            errorMessage += 'Password is required.';
+        }
+
+        if (errorMessage) {
+            // Clear server-side error messages
+            $('.alert-danger').each(function() {
+                if (!$(this).is('#error-message')) {
+                    $(this).remove();
+                }
+            });
+
+            // Set and show client-side error message
+            $('#error-message').text(errorMessage).removeClass('d-none');
+            return false; // Prevent form submission
+        } else {
+            // Clear existing client-side error message
+            $('#error-message').addClass('d-none');
+        }
+        
+        return true; // Allow form submission
+    }
+
+    // Attach the function to the form's submit event
+    $('#loginForm').on('submit', function() {
+        return checkFields();
+    });
+});
+</script>

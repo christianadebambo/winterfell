@@ -1,0 +1,88 @@
+{{> header }}
+{{> navbar_logged_in }}
+<div class="container my-5">
+  <h2 class="mb-4">Participate in Upcoming Events</h2>
+  <!-- Display errors if there are any -->
+  {{#errors.length}}
+  <div class="alert alert-danger" role="alert">{{.}}</div>
+{{/errors.length}}
+{{#events.length}}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <!-- Loop over each event and display it -->
+  {{#events}}
+  <div class="col">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{formattedDate}} at {{formattedTime}} {{timeZone}}</h6>
+        <p class="card-text text-truncate">{{description}}</p>
+        <!-- Read more toggle -->
+        <a href="#!"
+           class="card-link text-decoration-none"
+           data-bs-toggle="collapse"
+           data-bs-target="#desc{{_id}}"><i class="bi bi-chevron-down"></i> Read more</a>
+        <div class="collapse" id="desc{{_id}}">
+          <p class="card-text">{{description}}</p>
+        </div>
+        <p class="card-text mt-3">
+          <strong class="text-muted">Venue:</strong> {{venue}}
+        </p>
+        <p class="card-text">
+          <strong class="text-muted">Category:</strong> {{category}}
+        </p>
+      </div>
+      <div class="card-footer bg-white">
+        <!-- Check if the current user is the organizer -->
+        {{#isOrganizer}}
+        <button type="button" class="btn btn-outline-secondary btn-sm" disabled>You're the Organizer</button>
+      {{/isOrganizer}}
+      <!-- Check if the current user is already participating -->
+      {{#isParticipant}}
+      <button type="button" class="btn btn-outline-secondary btn-sm" disabled>Already Participating</button>
+    {{/isParticipant}}
+    <!-- If not organizer or already a participant, show the participate button -->
+    {{^isOrganizer}}
+    {{^isParticipant}}
+    <form action="/participate"
+          method="post"
+          class="d-inline"
+          onsubmit="return confirmParticipation();">
+      <input type="hidden" name="eventId" value="{{_id}}">
+      <button type="submit" class="btn btn-primary btn-sm">Participate</button>
+    </form>
+  {{/isParticipant}}
+{{/isOrganizer}}
+</div>
+</div>
+</div>
+{{/events}}
+</div>
+{{/events.length}}
+{{^events.length}}
+<p class="text-center">No upcoming events. Check back later!</p>
+{{/events.length}}
+</div>
+<script>
+  document.querySelectorAll('.container [data-bs-toggle="collapse"]').forEach(function (element) {
+  element.addEventListener('click', function (event) {
+    var targetId = element.getAttribute('data-bs-target');
+    if (targetId && targetId.startsWith("#desc")) {
+      event.preventDefault();
+      var targetElement = document.querySelector(targetId);
+      if (targetElement.classList.contains('show')) {
+        targetElement.classList.remove('show');
+        element.textContent = 'Read more'; // Change to 'Read more' when collapsed
+      } else {
+        targetElement.classList.add('show');
+        element.textContent = 'Read less'; // Change to 'Read less' when expanded
+      }
+    }
+  });
+});
+
+  // Confirmation for participation
+  function confirmParticipation() {
+    return confirm('Are you sure you want to participate in this event?');
+  }
+</script>
+{{> footer_logged_in }}
