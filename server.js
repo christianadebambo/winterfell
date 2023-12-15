@@ -43,7 +43,7 @@ app.use((req, res, next) => {
 
 // Configure session handling with express-session
 app.use(session({
-  secret: process.env.SESSION_SECRET,
+  secret: "rAnDoMdEv",
   resave: false,
   saveUninitialized: false,
   cookie: {
