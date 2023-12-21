@@ -7,6 +7,7 @@ const path = require("path");
 const NeDB = require("nedb");
 const bodyParser = require("body-parser"); // Middleware for parsing request bodies
 const flash = require('connect-flash');
+const portfinder = require('portfinder');
 const EventModel = require('./models/EventModel');
 const UserModel = require('./models/UserModel');
 const isAdmin = require('./middlewares/isAdmin'); // Import the isAdmin middleware
@@ -97,13 +98,17 @@ app.use('/admin', isAdmin, adminRoutes); // Apply isAdmin middleware to all admi
 
 const preferredPort = 3000;
 
-const server = app.listen(preferredPort, () => {
-  const actualPort = server.address().port;
-  if (actualPort === preferredPort) {
-    console.log(`Server is running on port ${actualPort}`);
-  } else {
-    console.log(`Port ${preferredPort} is not available. Server is running on port ${actualPort} instead.`);
+portfinder.basePort = preferredPort; // start searching from preferredPort
+
+portfinder.getPort((err, port) => {
+  if (err) {
+    console.error(err);
+    return;
   }
+
+  const server = app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
 });
 
 module.exports = app;
