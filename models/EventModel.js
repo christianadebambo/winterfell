@@ -1,3 +1,9 @@
+// Note: An admin user has been manually inserted into the database for initial access. 
+// Use the credentials below to access the functionalities of the Alumni Manager (admin):
+
+//     Email address: admin@example.com
+//     Password: admin
+
 // EventModel class definition to handle event-related database operations
 class EventModel {
   // Constructor initializing with a NeDB database instance

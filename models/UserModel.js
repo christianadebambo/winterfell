@@ -1,3 +1,9 @@
+// Note: An admin user has been manually inserted into the database for initial access. 
+// Use the credentials below to access the functionalities of the Alumni Manager (admin):
+
+//     Email address: admin@example.com
+//     Password: admin
+
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 

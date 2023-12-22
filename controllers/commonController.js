@@ -1,3 +1,10 @@
+// Note: An admin user has been manually inserted into the database for initial access. 
+// Use the credentials below to access the functionalities of the Alumni Manager (admin):
+
+//     Email address: admin@example.com
+//     Password: admin
+
+
 // Common controller object holding methods for handling general routes
 const TITLE_PREFIX = 'Winterfell University Alumni';
 
