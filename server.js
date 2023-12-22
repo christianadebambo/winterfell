@@ -50,7 +50,7 @@ app.use(session({
   cookie: {
     maxAge: 10 * 60 * 1000, // 10 minutes
     httpOnly: true, // Prevents client-side JS from accessing the cookie
-    secure: true // process.env.NODE_ENV === 'production' 
+    secure: process.env.NODE_ENV === 'production' 
   }
 }));
 
