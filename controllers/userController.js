@@ -196,23 +196,35 @@ const userController = {
           }
 
           // Regenerate session after successful login
-        req.session.regenerate((sessionErr) => {
-          if (sessionErr) {
-            // Handle session regeneration error
-            flashErrorsAndRedirect(["Error in session regeneration. Please try again."]);
-            return;
-          }
+          req.session.regenerate((sessionErr) => {
+            if (sessionErr) {
+              // Handle session regeneration error
+              flashErrorsAndRedirect([
+                "Error in session regeneration. Please try again.",
+              ]);
+              return;
+            }
 
-          // Set the user information in the new session
-          req.session.user = user;
+            // Set the user information in the new session
+            req.session.user = user;
 
-          // Redirect user based on their role
-          if (user && (!user.role || user.role === "alumni")) {
-            res.redirect("/dashboard");
-          } else if (user.role === "admin") {
-            res.redirect("/admin/dashboard");
-          }
-        });
+            // Explicitly save the session before redirecting
+            req.session.save((err) => {
+              if (err) {
+                console.error("Error saving session:", err);
+                flashErrorsAndRedirect([
+                  "Error saving session. Please try again.",
+                ]);
+              } else {
+                // Redirect user based on their role
+                if (user && (!user.role || user.role === "alumni")) {
+                  res.redirect("/dashboard");
+                } else if (user.role === "admin") {
+                  res.redirect("/admin/dashboard");
+                }
+              }
+            });
+          });
         }
       );
     });
@@ -301,7 +313,7 @@ const userController = {
       const newUser = {
         name,
         email,
-        password, 
+        password,
         gradYear,
         prefEventCategory,
       };
