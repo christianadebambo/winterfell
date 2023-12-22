@@ -49,7 +49,7 @@ app.use(session({
   saveUninitialized: false,
   cookie: {
     maxAge: 10 * 60 * 1000, // 10 minutes
-    httpOnly: true, // Prevents client-side JS from accessing the cookie
+    httpOnly: true, // Prevents clientside JS from accessing the cookie
     secure: process.env.NODE_ENV === 'production' 
   }
 }));
