@@ -3,7 +3,7 @@
 The Winterfell University Alumni Platform is a comprehensive web application designed for facilitating interaction and engagement among alumni of Winterfell University. This system allows alumni to participate in events, update personal profiles, and engage with the alumni community. It features a separate admin panel for managing users and events, including specialized functionalities for an Alumni Manager.
 
 **Note:** An admin user has been manually inserted into the database for initial access. Use the credentials below to access the functionalities of the Alumni Manager (admin):
-- **Email:** admin@example.com
+- **Email address:** admin@example.com
 - **Password:** admin
 
 ## Code Overview
@@ -64,4 +64,4 @@ The Winterfell University Alumni Platform is a comprehensive web application des
 
 2. **Access the application:**
    ```bash
-   Open a web browser and visit http://localhost:3000.
+   Open a web browser and visit `http://localhost:3000`.
