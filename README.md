@@ -33,7 +33,9 @@ The Winterfell University Alumni Platform is a comprehensive web application des
 
 ### Admin Dashboard
 - An admin dashboard is available for the Alumni Manager to oversee all activities, including event management and user records.
-
+- **Email address:** admin@example.com
+- **Password:** admin
+  
 ### User Interaction
 - Alumni can register, log in, update profiles, and participate in events.
 - Users can view, organize, and participate in upcoming events, categorized by their nature (professional, networking, etc.).
